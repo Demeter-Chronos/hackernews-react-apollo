@@ -19,19 +19,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
-  document.getElementById('root')
-);
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
+// ReactDOM.render(
+//   <ApolloProvider client={client}>
 //     <App />
-//   </React.StrictMode>
+//   </ApolloProvider>,
+//   document.getElementById('root')
 // );
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <ApolloProvider client={client}>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  </ApolloProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
